@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenidoQCambia %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/busq_categoria.css' %}">
+
+    <form action="{% url 'BuscarCategoria' %}" method="GET">{% csrf_token %}
+        <p>Nombre del categoría de comunidad que queres buscar: <input type="text" name="categoria" id=""></p>
+        <button type="submit"> Buscar </button>
+    </form>
+{% endblock contenidoQCambia %}

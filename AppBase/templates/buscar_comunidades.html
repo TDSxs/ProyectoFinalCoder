@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenidoQCambia %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/buscar_comunidades.css' %}">
+
+  <h1>Buscar Comunidad</h1>
+
+  <div class="container">
+    <form method="GET" action="{% url 'BusquedaComunidades' %}">
+      <div class="form-group">
+        <label>Buscar por:</label>
+        <div class="btn-group" role="group">
+            {% url 'BuscarNombre' as url %}
+            <button type="button" onclick="window.location.href='{{ url }}'">NOMBRE</button>
+            {% url 'BuscarCategoria' as url %}
+            <button type="button" onclick="window.location.href='{{ url }}'">CATEGORÍA</button>
+            {% url 'BuscarEmpresa' as url %}
+            <button type="button" onclick="window.location.href='{{ url }}'">EMPRESA</button>
+        </div>
+      </div>
+      {% csrf_token %}
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenidoQCambia %}
+    <link rel="stylesheet" type="text/css" href="{% static 'logout.css' %}">
+
+    <img class="center" height="400px" src="{% static 'Apu.jpg' %}" alt="Imagen saludo">
+
+    <h1>¡Vuelve Pronto!</h1>
+
+    <div style="margin-top: 20px;">
+        {% url 'Inicio' as url %}
+        <button class="center" type="button" onclick="window.location.href='{{ url }}'">Volver al Inicio</button>
+    </div>
+{% endblock contenidoQCambia %}

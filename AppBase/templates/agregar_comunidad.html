@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenidoQCambia %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/agregar_comunidad.css' %}">
+
+    <h1>Agregar Comunidad</h1>
+
+    <form action="{% url 'AgregarComunidad' %}" method="POST">{% csrf_token %}
+        {{mi_formulario.as_p}}
+        <button type="submit"> Enviar </button>
+    </form>
+{% endblock contenidoQCambia %}
